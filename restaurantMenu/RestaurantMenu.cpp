@@ -143,18 +143,17 @@ typedef struct { unsigned short len; unsigned char arr[1]; } varchar;
 /* cud (compilation unit data) array */
 static const short sqlcud0[] =
 {13,4130,178,0,0,
-5,0,0,1,57,0,9,167,0,0,1,1,0,1,0,1,3,0,0,
-24,0,0,1,0,0,13,169,0,0,1,0,0,1,0,2,4,0,0,
-43,0,0,2,49,0,46,177,0,0,2,2,0,1,0,1,4,0,0,1,3,0,0,
-66,0,0,3,0,0,29,178,0,0,0,0,0,1,0,
-81,0,0,1,0,0,15,180,0,0,0,0,0,1,0,
-96,0,0,0,0,0,27,212,0,0,4,4,0,1,0,1,97,0,0,1,10,0,0,1,10,0,0,1,10,0,0,
-127,0,0,0,0,0,56,214,0,0,1,1,0,1,0,3,102,0,0,
-146,0,0,0,0,0,56,215,0,0,1,1,0,1,0,3,102,0,0,
-165,0,0,0,0,0,56,216,0,0,1,1,0,1,0,3,102,0,0,
-184,0,0,5,41,0,9,241,0,0,0,0,0,1,0,
-199,0,0,5,0,0,13,246,0,0,2,0,0,1,0,2,97,0,0,2,4,0,0,
-222,0,0,5,0,0,15,258,0,0,0,0,0,1,0,
+5,0,0,1,57,0,9,165,0,0,1,1,0,1,0,1,3,0,0,
+24,0,0,1,0,0,13,167,0,0,1,0,0,1,0,2,4,0,0,
+43,0,0,2,49,0,46,175,0,0,2,2,0,1,0,1,4,0,0,1,3,0,0,
+66,0,0,3,0,0,29,176,0,0,0,0,0,1,0,
+81,0,0,1,0,0,15,178,0,0,0,0,0,1,0,
+96,0,0,0,0,0,27,210,0,0,4,4,0,1,0,1,97,0,0,1,10,0,0,1,10,0,0,1,10,0,0,
+127,0,0,0,0,0,56,212,0,0,1,1,0,1,0,3,102,0,0,
+146,0,0,0,0,0,56,213,0,0,1,1,0,1,0,3,102,0,0,
+165,0,0,5,41,0,9,235,0,0,0,0,0,1,0,
+180,0,0,5,0,0,13,240,0,0,2,0,0,1,0,2,97,0,0,2,4,0,0,
+203,0,0,5,0,0,15,251,0,0,0,0,0,1,0,
 };
 
 
@@ -164,12 +163,10 @@ static const short sqlcud0[] =
 
 
 int i, code, n;
-double price,stock;
-char name[50];
 char connData[50] = "C##ALVIN/dsasd@//10.211.55.3:1521/xe";
 SQL_CURSOR c_menu;
 SQL_CURSOR c_stock; 
-SQL_CURSOR c_update_stock;
+
 
 struct
 {
@@ -740,45 +737,6 @@ int main() {
 }
 
 
-    /* EXEC SQL ALLOCATE :c_update_stock; */ 
-
-{
-    struct sqlexd sqlstm;
-    sqlstm.sqlvsn = 13;
-    sqlstm.arrsiz = 4;
-    sqlstm.sqladtp = &sqladt;
-    sqlstm.sqltdsp = &sqltds;
-    sqlstm.stmt = "";
-    sqlstm.iters = (unsigned int  )1;
-    sqlstm.offset = (unsigned int  )165;
-    sqlstm.cud = sqlcud0;
-    sqlstm.sqlest = (unsigned char  *)&sqlca;
-    sqlstm.sqlety = (unsigned short)4352;
-    sqlstm.occurs = (unsigned int  )0;
-    sqlstm.sqhstv[0] = (         void  *)&c_update_stock;
-    sqlstm.sqhstl[0] = (unsigned int  )sizeof(int);
-    sqlstm.sqhsts[0] = (         int  )0;
-    sqlstm.sqindv[0] = (         void  *)0;
-    sqlstm.sqinds[0] = (         int  )0;
-    sqlstm.sqharm[0] = (unsigned int  )0;
-    sqlstm.sqadto[0] = (unsigned short )0;
-    sqlstm.sqtdso[0] = (unsigned short )0;
-    sqlstm.sqphsv = sqlstm.sqhstv;
-    sqlstm.sqphsl = sqlstm.sqhstl;
-    sqlstm.sqphss = sqlstm.sqhsts;
-    sqlstm.sqpind = sqlstm.sqindv;
-    sqlstm.sqpins = sqlstm.sqinds;
-    sqlstm.sqparm = sqlstm.sqharm;
-    sqlstm.sqparc = sqlstm.sqharc;
-    sqlstm.sqpadto = sqlstm.sqadto;
-    sqlstm.sqptdso = sqlstm.sqtdso;
-    sqlcxt((void **)0, &sqlctx, &sqlstm, &sqlfpn);
-}
-
-
-    
-
- 
  
 
      string isOrderingMenu = "y";
@@ -811,7 +769,7 @@ int main() {
  sqlstm.sqltdsp = &sqltds;
  sqlstm.stmt = sq0005;
  sqlstm.iters = (unsigned int  )1;
- sqlstm.offset = (unsigned int  )184;
+ sqlstm.offset = (unsigned int  )165;
  sqlstm.selerr = (unsigned short)1;
  sqlstm.sqlpfmem = (unsigned int  )0;
  sqlstm.cud = sqlcud0;
@@ -837,7 +795,7 @@ int main() {
   sqlstm.sqladtp = &sqladt;
   sqlstm.sqltdsp = &sqltds;
   sqlstm.iters = (unsigned int  )1;
-  sqlstm.offset = (unsigned int  )199;
+  sqlstm.offset = (unsigned int  )180;
   sqlstm.selerr = (unsigned short)1;
   sqlstm.sqlpfmem = (unsigned int  )0;
   sqlstm.cud = sqlcud0;
@@ -880,7 +838,6 @@ int main() {
         if (i<=5){
         foods.insert(make_pair(i, new Menu(menu_info.name, menu_info.price)));
         } else if (i>5){
-        printf("dirnk");
         drinks.insert(make_pair(i-5, new Menu(menu_info.name, menu_info.price)));
         }
         
@@ -896,7 +853,7 @@ int main() {
   sqlstm.sqladtp = &sqladt;
   sqlstm.sqltdsp = &sqltds;
   sqlstm.iters = (unsigned int  )1;
-  sqlstm.offset = (unsigned int  )222;
+  sqlstm.offset = (unsigned int  )203;
   sqlstm.cud = sqlcud0;
   sqlstm.sqlest = (unsigned char  *)&sqlca;
   sqlstm.sqlety = (unsigned short)4352;

@@ -3,12 +3,10 @@
 exec sql begin declare section;
 
 int i, code, n;
-double price,stock;
-char name[50];
 char connData[50] = "C##ALVIN/dsasd@//10.211.55.3:1521/xe";
 SQL_CURSOR c_menu;
 SQL_CURSOR c_stock; 
-SQL_CURSOR c_update_stock;
+
 
 struct
 {
@@ -213,10 +211,6 @@ int main() {
 
     EXEC SQL ALLOCATE :c_menu;
     EXEC SQL ALLOCATE :c_stock;
-    EXEC SQL ALLOCATE :c_update_stock;
-    
-
- 
  
 
      string isOrderingMenu = "y";
@@ -248,7 +242,6 @@ int main() {
         if (i<=5){
         foods.insert(make_pair(i, new Menu(menu_info.name, menu_info.price)));
         } else if (i>5){
-        printf("dirnk");
         drinks.insert(make_pair(i-5, new Menu(menu_info.name, menu_info.price)));
         }
         
